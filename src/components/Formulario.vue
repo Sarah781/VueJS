@@ -7,11 +7,7 @@
             </div>
             <div class="column">
                 <div class="is-flex is-align-items-center is-justify-content-space-between">
-                    <section>
-                        <strong>
-                            {{ tempoFormatado }}
-                        </strong>
-                    </section>
+                    <CronometroTempo />
                     <button class="button" @click="iniciarTarefa">
                         <span class="icon">
                             <i class="fas fa-play"></i>
@@ -32,19 +28,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import CronometroTempo from './Cronometro.vue'
 
 export default defineComponent({
     name: 'FormulárioUsuario',
+    components: {
+        CronometroTempo
+    },
     data () {
         return {
             tarefa: '',
             tempo: 0,
             cronometro: 0,
-        }
-    },
-    computed: {
-        tempoFormatado() : string {
-            return new Date(this.tempo * 1000).toISOString().substr(11, 8)
         }
     },
     methods: {
