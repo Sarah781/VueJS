@@ -22,7 +22,7 @@ export default defineComponent({
   name: 'App',
   components: {
     BarraLateral,
-    Formulario
+    Formulario,
   }
  
 });
